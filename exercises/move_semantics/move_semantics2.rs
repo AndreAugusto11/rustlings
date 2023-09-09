@@ -5,13 +5,11 @@
 // Execute `rustlings hint move_semantics2` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
-
 #[test]
 fn main() {
     let vec0 = vec![22, 44, 66];
 
-    let mut vec1 = fill_vec(vec0);
+    let vec1 = fill_vec(vec0.clone()); // In Rust, when an argument is passed to a function and it's not explicitly returned, you can't use the original variable anymore.
 
     assert_eq!(vec0, vec![22, 44, 66]);
     assert_eq!(vec1, vec![22, 44, 66, 88]);
